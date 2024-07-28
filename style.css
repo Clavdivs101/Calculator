@@ -1,19 +1,81 @@
+.calculatorWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: chocolate;
+}
+
 .display{
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 10px;
+    padding-top: 10px;
     border-style: solid;
     box-sizing: border-box;
-    width: 200px;
+    width: 220px;
     height: 50px;
+    border-radius: 5px;
+    background-color: wheat;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }
 
 .buttonsWrapper{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    width: 100px;
-    gap: 10px;
+    /* border-style: solid; */
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 280px;
     margin-top: 20px;
+    gap: 6px;
     /* height: 50px; */
+}
+
+.numberWrapper{
+    /* border-style: solid;
+    border-color: white; */
+    gap: 10px;
+    width: 160px;
+}
+
+.operations{
+    /* border-style: solid;
+    border-color: white; */
+    width: 50px;
+}
+.equalsWrapper{
+flex-direction: column;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    background-color: gray;
+}
+
+#btnEquals{
+    width: 218px;
+    background-color: cornflowerblue;
+}
+
+#btnZero{
+    width: 158px;
+}
+
+#btnPlus,
+#btnSubstract,
+#btnMultiply,
+#btnDivide{
+    background-color: greenyellow;
 }

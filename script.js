@@ -19,6 +19,8 @@ let displayValue = [];
 let num;
 let num2;
 let operator;
+let text = 0;
+let operation = [];
 
 
 function add(a ,b){
@@ -56,83 +58,134 @@ function operate(num, operator, num2){
 
 btnOne.addEventListener('click', () => {
     displayValue.push('1');
-    if(!num){
-        num = '1';
-        console.log(num);
-    }else num2 = '1';
-    console.log(num2);
-    displayBox.textContent = displayValue;
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(`text = ${text}`);
+    // console.log(`num = ${num}`);
+    // console.log(`num2 = ${num2}`);
 })
 
 btnTwo.addEventListener('click', () => {
     displayValue.push('2');
-    if(!num){
-        num = '2';
-        console.log(num);
-    }else num2 = '2';
-    console.log(num2);
-    displayBox.textContent = displayValue;
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
+})
+
+btnThree.addEventListener('click', () => {
+    displayValue.push('3');
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
+})
+
+btnFour.addEventListener('click', () => {
+    displayValue.push('4');
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
+})
+
+btnFive.addEventListener('click', () => {
+    displayValue.push('5');
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
+})
+
+btnSix.addEventListener('click', () => {
+    displayValue.push('6');
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
+})
+
+btnSeven.addEventListener('click', () => {
+    displayValue.push('7');
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
+})
+
+btnEight.addEventListener('click', () => {
+    displayValue.push('8');
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
+})
+
+btnNine.addEventListener('click', () => {
+    displayValue.push('9');
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
 })
 
 btnZero.addEventListener('click', () => {
     displayValue.push('0');
-    if(!num){
-        num = '0';
-        console.log(num);
-    }else num2 = '0';
-    console.log(num2);
-    displayBox.textContent = displayValue;
+    text = displayValue.join('');
+    displayBox.textContent = text;
+    console.log(text);
 })
 
 btnPlus.addEventListener('click', () => {
     displayValue.push('+');
     operator = '+'
     console.log(operator);
-    displayBox.textContent = displayValue;
+    displayBox.textContent = displayValue.join('');
 })
 
 btnSubstract.addEventListener('click', () => {
     displayValue.push('-');
     operator = '-'
     console.log(operator);
-    displayBox.textContent = displayValue;
+    displayBox.textContent = displayValue.join('');
 })
 
 btnMultiply.addEventListener('click', () => {
     displayValue.push('*');
     operator = '*'
     console.log(operator);
-    displayBox.textContent = displayValue;
+    displayBox.textContent = displayValue.join('');
 })
 
 btnDivide.addEventListener('click', () => {
     displayValue.push('/');
     operator = '/'
     console.log(operator);
-    displayBox.textContent = displayValue;
+    displayBox.textContent = displayValue.join('');
 })
-
-
-
-
-
-
-
 
 btnEquals.addEventListener('click', () => {
-    if(operator === '/' && (num2 === '0' || num2 === 0)){
-        displayBox.textContent = 'CURSE YOU BAYLE';
-        displayValue = [];
-        console.log(displayValue);
-    }else
+    if(!num || num === "CURSE YOU BAYLE"){
+    operation = text.split(operator);
+    console.log(`operation = ${operation}`);
+    num = operation[0];
+    num2 = operation[1];
+    console.log(`num = ${num}`);
+    console.log(`num2 = ${num2}`);
+    console.log(operate(num, operator, num2));
+    operation.splice(0, 2);
+    operation.push(operate(num, operator, num2))
+    console.log(`operation = ${operation}`);
     displayBox.textContent = operate(num, operator, num2);
-    displayValue.push(operate(num, operator, num2));
-    displayValue.splice(0, 3);
     num = operate(num, operator, num2);
-    console.log(displayValue);
+    console.log(`num = ${num}`);
+    console.log(text);
+    displayValue.splice(0, displayValue.length);
+    } else{
+        operation = text.split(operator);
+        console.log(`operation = ${operation}`);
+        num2 = operation[1];
+        console.log(`num = ${num}`);
+        console.log(`num2 = ${num2}`);
+        console.log(operate(num, operator, num2));
+        operation.splice(0, 2);
+        operation.unshift(operate(num, operator, num2))
+        console.log(`operation = ${operation}`);
+        displayBox.textContent = operate(num, operator, num2);
+        num = operate(num, operator, num2);
+        console.log(`num2 = ${num2}`);
+        displayValue.splice(0, displayValue.length);
+    }
 })
-
-console.log(add(2, 3));
-console.log(substract(10, 2));
-console.log(multiply(2, 2));
-console.log(divide(2, 0));
