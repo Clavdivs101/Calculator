@@ -129,13 +129,80 @@ btnZero.addEventListener('click', () => {
 })
 
 btnPlus.addEventListener('click', () => {
+        if (displayValue.length >= 2){
+            if(!num || num === "CURSE YOU BAYLE"){
+                operation = text.split(operator);
+                console.log(`operation = ${operation}`);
+                num = operation[0];
+                num2 = operation[1];
+                console.log(`num = ${num}`);
+                console.log(`num2 = ${num2}`);
+                console.log(operate(num, operator, num2));
+                operation.splice(0, 2);
+                operation.push(operate(num, operator, num2))
+                console.log(`operation = ${operation}`);
+                displayBox.textContent = operate(num, operator, num2);
+                num = operate(num, operator, num2);
+                console.log(`num = ${num}`);
+                console.log(text);
+                displayValue.splice(0, displayValue.length);
+                } else{
+                    operation = text.split(operator);
+                    console.log(`operation = ${operation}`);
+                    num2 = operation[1];
+                    console.log(`num = ${num}`);
+                    console.log(`num2 = ${num2}`);
+                    console.log(operate(num, operator, num2));
+                    operation.splice(0, 2);
+                    operation.unshift(operate(num, operator, num2))
+                    console.log(`operation = ${operation}`);
+                    displayBox.textContent = operate(num, operator, num2);
+                    num = operate(num, operator, num2);
+                    console.log(`num2 = ${num2}`);
+                    displayValue.splice(0, displayValue.length);
+                }
+        }
     displayValue.push('+');
     operator = '+'
     console.log(operator);
     displayBox.textContent = displayValue.join('');
+
 })
 
 btnSubstract.addEventListener('click', () => {
+    if (displayValue.length >= 2){
+        if(!num || num === "CURSE YOU BAYLE"){
+            operation = text.split(operator);
+            console.log(`operation = ${operation}`);
+            num = operation[0];
+            num2 = operation[1];
+            console.log(`num = ${num}`);
+            console.log(`num2 = ${num2}`);
+            console.log(operate(num, operator, num2));
+            operation.splice(0, 2);
+            operation.push(operate(num, operator, num2))
+            console.log(`operation = ${operation}`);
+            displayBox.textContent = operate(num, operator, num2);
+            num = operate(num, operator, num2);
+            console.log(`num = ${num}`);
+            console.log(text);
+            displayValue.splice(0, displayValue.length);
+            } else{
+                operation = text.split(operator);
+                console.log(`operation = ${operation}`);
+                num2 = operation[1];
+                console.log(`num = ${num}`);
+                console.log(`num2 = ${num2}`);
+                console.log(operate(num, operator, num2));
+                operation.splice(0, 2);
+                operation.unshift(operate(num, operator, num2))
+                console.log(`operation = ${operation}`);
+                displayBox.textContent = operate(num, operator, num2);
+                num = operate(num, operator, num2);
+                console.log(`num2 = ${num2}`);
+                displayValue.splice(0, displayValue.length);
+            }
+    }
     displayValue.push('-');
     operator = '-'
     console.log(operator);
@@ -143,6 +210,39 @@ btnSubstract.addEventListener('click', () => {
 })
 
 btnMultiply.addEventListener('click', () => {
+    if (displayValue.length >= 2){
+        if(!num || num === "CURSE YOU BAYLE"){
+            operation = text.split(operator);
+            console.log(`operation = ${operation}`);
+            num = operation[0];
+            num2 = operation[1];
+            console.log(`num = ${num}`);
+            console.log(`num2 = ${num2}`);
+            console.log(operate(num, operator, num2));
+            operation.splice(0, 2);
+            operation.push(operate(num, operator, num2))
+            console.log(`operation = ${operation}`);
+            displayBox.textContent = operate(num, operator, num2);
+            num = operate(num, operator, num2);
+            console.log(`num = ${num}`);
+            console.log(text);
+            displayValue.splice(0, displayValue.length);
+            } else{
+                operation = text.split(operator);
+                console.log(`operation = ${operation}`);
+                num2 = operation[1];
+                console.log(`num = ${num}`);
+                console.log(`num2 = ${num2}`);
+                console.log(operate(num, operator, num2));
+                operation.splice(0, 2);
+                operation.unshift(operate(num, operator, num2))
+                console.log(`operation = ${operation}`);
+                displayBox.textContent = operate(num, operator, num2);
+                num = operate(num, operator, num2);
+                console.log(`num2 = ${num2}`);
+                displayValue.splice(0, displayValue.length);
+            }
+    }
     displayValue.push('*');
     operator = '*'
     console.log(operator);
@@ -150,6 +250,39 @@ btnMultiply.addEventListener('click', () => {
 })
 
 btnDivide.addEventListener('click', () => {
+    if (displayValue.length >= 2){
+        if(!num || num === "CURSE YOU BAYLE"){
+            operation = text.split(operator);
+            console.log(`operation = ${operation}`);
+            num = operation[0];
+            num2 = operation[1];
+            console.log(`num = ${num}`);
+            console.log(`num2 = ${num2}`);
+            console.log(operate(num, operator, num2));
+            operation.splice(0, 2);
+            operation.push(operate(num, operator, num2))
+            console.log(`operation = ${operation}`);
+            displayBox.textContent = operate(num, operator, num2);
+            num = operate(num, operator, num2);
+            console.log(`num = ${num}`);
+            console.log(text);
+            displayValue.splice(0, displayValue.length);
+            } else{
+                operation = text.split(operator);
+                console.log(`operation = ${operation}`);
+                num2 = operation[1];
+                console.log(`num = ${num}`);
+                console.log(`num2 = ${num2}`);
+                console.log(operate(num, operator, num2));
+                operation.splice(0, 2);
+                operation.unshift(operate(num, operator, num2))
+                console.log(`operation = ${operation}`);
+                displayBox.textContent = operate(num, operator, num2);
+                num = operate(num, operator, num2);
+                console.log(`num2 = ${num2}`);
+                displayValue.splice(0, displayValue.length);
+            }
+    }
     displayValue.push('/');
     operator = '/'
     console.log(operator);
