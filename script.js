@@ -340,6 +340,7 @@ btnEquals.addEventListener('click', () => {
         operation.unshift(operate(num, operator, num2))
         console.log(`operation = ${operation}`);
         result = operate(num, operator, num2);
+        num = operate(num, operator, num2);
         displayBox.textContent = `${result}`;
         console.log(`num2 = ${num2}`);
         displayValue.splice(0, displayValue.length);
