@@ -1,3 +1,5 @@
+const displayLeft = document.querySelector('#displayLeft');
+displayLeft.textContent = "";
 const displayBox = document.querySelector('#display');
 displayBox.textContent = "";
 const btnOne = document.querySelector('#btnOne');
@@ -10,6 +12,7 @@ const btnSeven = document.querySelector('#btnSeven');
 const btnEight = document.querySelector('#btnEight');
 const btnNine = document.querySelector('#btnNine');
 const btnZero = document.querySelector('#btnZero');
+const btnClear = document.querySelector('#btnClear');
 const btnPlus = document.querySelector('#btnPlus');
 const btnSubstract = document.querySelector('#btnSubstract')
 const btnEquals = document.querySelector('#btnEquals');
@@ -128,6 +131,15 @@ btnZero.addEventListener('click', () => {
     console.log(text);
 })
 
+btnClear.addEventListener('click', () => {
+    displayValue.splice(0, displayValue.length);
+    operation.splice(0, operation.length);
+    num = 0;
+    num2 = 0;
+    displayBox.textContent = ""
+    displayLeft.textContent = "";
+})
+
 btnPlus.addEventListener('click', () => {
         if (displayValue.length >= 2){
             if(!num || num === "CURSE YOU BAYLE"){
@@ -142,6 +154,7 @@ btnPlus.addEventListener('click', () => {
                 operation.push(operate(num, operator, num2))
                 console.log(`operation = ${operation}`);
                 displayBox.textContent = operate(num, operator, num2);
+                displayLeft.textContent = operate(num, operator, num2);
                 num = operate(num, operator, num2);
                 console.log(`num = ${num}`);
                 console.log(text);
@@ -157,10 +170,16 @@ btnPlus.addEventListener('click', () => {
                     operation.unshift(operate(num, operator, num2))
                     console.log(`operation = ${operation}`);
                     displayBox.textContent = operate(num, operator, num2);
+                    displayLeft.textContent = operate(num, operator, num2);
                     num = operate(num, operator, num2);
                     console.log(`num2 = ${num2}`);
                     displayValue.splice(0, displayValue.length);
                 }
+        }
+        for(let i = 0; i <= displayValue.length; i++){
+            if(displayValue[i-1] === '+'){
+                displayValue.splice(displayValue[i-1],displayValue.length);
+            }
         }
     displayValue.push('+');
     operator = '+'
@@ -183,6 +202,7 @@ btnSubstract.addEventListener('click', () => {
             operation.push(operate(num, operator, num2))
             console.log(`operation = ${operation}`);
             displayBox.textContent = operate(num, operator, num2);
+            displayLeft.textContent = operate(num, operator, num2);
             num = operate(num, operator, num2);
             console.log(`num = ${num}`);
             console.log(text);
@@ -198,6 +218,7 @@ btnSubstract.addEventListener('click', () => {
                 operation.unshift(operate(num, operator, num2))
                 console.log(`operation = ${operation}`);
                 displayBox.textContent = operate(num, operator, num2);
+                displayLeft.textContent = operate(num, operator, num2);
                 num = operate(num, operator, num2);
                 console.log(`num2 = ${num2}`);
                 displayValue.splice(0, displayValue.length);
@@ -223,6 +244,7 @@ btnMultiply.addEventListener('click', () => {
             operation.push(operate(num, operator, num2))
             console.log(`operation = ${operation}`);
             displayBox.textContent = operate(num, operator, num2);
+            displayLeft.textContent = operate(num, operator, num2);
             num = operate(num, operator, num2);
             console.log(`num = ${num}`);
             console.log(text);
@@ -238,6 +260,7 @@ btnMultiply.addEventListener('click', () => {
                 operation.unshift(operate(num, operator, num2))
                 console.log(`operation = ${operation}`);
                 displayBox.textContent = operate(num, operator, num2);
+                displayLeft.textContent = operate(num, operator, num2);
                 num = operate(num, operator, num2);
                 console.log(`num2 = ${num2}`);
                 displayValue.splice(0, displayValue.length);
@@ -263,6 +286,7 @@ btnDivide.addEventListener('click', () => {
             operation.push(operate(num, operator, num2))
             console.log(`operation = ${operation}`);
             displayBox.textContent = operate(num, operator, num2);
+            displayLeft.textContent = operate(num, operator, num2);
             num = operate(num, operator, num2);
             console.log(`num = ${num}`);
             console.log(text);
@@ -278,6 +302,7 @@ btnDivide.addEventListener('click', () => {
                 operation.unshift(operate(num, operator, num2))
                 console.log(`operation = ${operation}`);
                 displayBox.textContent = operate(num, operator, num2);
+                displayLeft.textContent = operate(num, operator, num2);
                 num = operate(num, operator, num2);
                 console.log(`num2 = ${num2}`);
                 displayValue.splice(0, displayValue.length);
@@ -301,7 +326,8 @@ btnEquals.addEventListener('click', () => {
     operation.splice(0, 2);
     operation.push(operate(num, operator, num2))
     console.log(`operation = ${operation}`);
-    displayBox.textContent = operate(num, operator, num2);
+    displayBox.textContent = ""
+    displayLeft.textContent = operate(num, operator, num2);
     num = operate(num, operator, num2);
     console.log(`num = ${num}`);
     console.log(text);
@@ -316,7 +342,8 @@ btnEquals.addEventListener('click', () => {
         operation.splice(0, 2);
         operation.unshift(operate(num, operator, num2))
         console.log(`operation = ${operation}`);
-        displayBox.textContent = operate(num, operator, num2);
+        displayBox.textContent = "";
+        displayLeft.textContent = operate(num, operator, num2);
         num = operate(num, operator, num2);
         console.log(`num2 = ${num2}`);
         displayValue.splice(0, displayValue.length);

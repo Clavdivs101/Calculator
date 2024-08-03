@@ -13,16 +13,42 @@
     background-color: chocolate;
 }
 
-.display{
+.displays{
     display: flex;
+    flex-direction: row;
+
+}
+
+.displayLeft{
+    display: flex;
+    flex-wrap: nowrap;
     justify-content: end;
     align-items: center;
     padding-top: 10px;
     border-style: solid;
+    border-right-style: hidden;
     box-sizing: border-box;
-    width: 220px;
+    width: 150px;
     height: 50px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    background-color: wheat;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.display{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: end;
+    align-items: center;
+    padding-top: 10px;
+    border-style: solid;
+    border-left-style: hidden;
+    box-sizing: border-box;
+    width: 70px;
+    height: 50px;
+    /* border-radius: 5px; */
     background-color: wheat;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
@@ -73,7 +99,8 @@ button{
 }
 
 #btnZero{
-    width: 158px;
+    /* width: 158px; */
+    width: 104px;
 }
 
 #btnPlus,
