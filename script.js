@@ -16,6 +16,7 @@ const btnClear = document.querySelector('#btnClear');
 const btnPlus = document.querySelector('#btnPlus');
 const btnSubstract = document.querySelector('#btnSubstract')
 const btnEquals = document.querySelector('#btnEquals');
+btnEquals.disabled = true;
 const btnMultiply = document.querySelector('#btnMultiply');
 const btnDivide = document.querySelector('#btnDivide');
 let displayValue = [];
@@ -141,6 +142,7 @@ btnClear.addEventListener('click', () => {
 })
 
 btnPlus.addEventListener('click', () => {
+    btnPlus.disabled = true;
         if (displayValue.length >= 2){
             if(!num || num === "CURSE YOU BAYLE"){
                 operation = text.split(operator);
@@ -176,11 +178,7 @@ btnPlus.addEventListener('click', () => {
                     displayValue.splice(0, displayValue.length);
                 }
         }
-        for(let i = 0; i <= displayValue.length; i++){
-            if(displayValue[i-1] === '+'){
-                displayValue.splice(displayValue[i-1],displayValue.length);
-            }
-        }
+
     displayValue.push('+');
     operator = '+'
     console.log(operator);
@@ -348,4 +346,30 @@ btnEquals.addEventListener('click', () => {
         console.log(`num2 = ${num2}`);
         displayValue.splice(0, displayValue.length);
     }
+})
+
+const numberWrapper = document.getElementById('numberWrapper');
+numberWrapper.addEventListener('click', () => {
+    for(let i = 0; i <= displayValue.length; i++){
+        if (displayValue.length > 2){
+            btnEquals.disabled = false;
+        }
+    }
+    btnPlus.disabled = false;
+    btnSubstract.disabled = false;
+    btnMultiply.disabled = false;
+    btnDivide.disabled = false;
+})
+
+const operationsWrapper = document.getElementById('operationsWrapper');
+operationsWrapper.addEventListener('click', () => {
+    for(let i = 0; i <= displayValue.length; i++){
+        if (displayValue.length > 2){
+            btnEquals.disabled = false;
+        }
+    }
+    btnPlus.disabled = true;
+    btnSubstract.disabled = true;
+    btnMultiply.disabled = true;
+    btnDivide.disabled = true;
 })
