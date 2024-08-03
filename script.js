@@ -136,6 +136,7 @@ btnClear.addEventListener('click', () => {
     num = 0;
     num2 = 0;
     operator = 0;
+    result = '';
     displayBox.textContent = ""
 })
 
