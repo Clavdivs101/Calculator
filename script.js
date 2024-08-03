@@ -143,7 +143,7 @@ btnClear.addEventListener('click', () => {
 
 btnPlus.addEventListener('click', () => {
     btnPlus.disabled = true;
-        if (displayValue.length >= 2){
+        if (displayValue.length >= 2 && operator){
             if(!num || num === "CURSE YOU BAYLE"){
                 operation = text.split(operator);
                 console.log(`operation = ${operation}`);
@@ -187,7 +187,7 @@ btnPlus.addEventListener('click', () => {
 })
 
 btnSubstract.addEventListener('click', () => {
-    if (displayValue.length >= 2){
+    if (displayValue.length >= 2 && operator){
         if(!num || num === "CURSE YOU BAYLE"){
             operation = text.split(operator);
             console.log(`operation = ${operation}`);
@@ -229,7 +229,7 @@ btnSubstract.addEventListener('click', () => {
 })
 
 btnMultiply.addEventListener('click', () => {
-    if (displayValue.length >= 2){
+    if (displayValue.length >= 2 && operator){
         if(!num || num === "CURSE YOU BAYLE"){
             operation = text.split(operator);
             console.log(`operation = ${operation}`);
@@ -271,7 +271,7 @@ btnMultiply.addEventListener('click', () => {
 })
 
 btnDivide.addEventListener('click', () => {
-    if (displayValue.length >= 2){
+    if (displayValue.length >= 2 && operator){
         if(!num || num === "CURSE YOU BAYLE"){
             operation = text.split(operator);
             console.log(`operation = ${operation}`);
