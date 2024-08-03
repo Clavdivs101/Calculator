@@ -1,5 +1,3 @@
-const displayLeft = document.querySelector('#displayLeft');
-displayLeft.textContent = "";
 const displayBox = document.querySelector('#display');
 displayBox.textContent = "";
 const btnOne = document.querySelector('#btnOne');
@@ -25,7 +23,7 @@ let num2;
 let operator;
 let text = 0;
 let operation = [];
-
+let result = '';
 
 function add(a ,b){
     return +a + +b;
@@ -62,7 +60,7 @@ function operate(num, operator, num2){
 
 btnOne.addEventListener('click', () => {
     displayValue.push('1');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(`text = ${text}`);
     // console.log(`num = ${num}`);
@@ -71,63 +69,63 @@ btnOne.addEventListener('click', () => {
 
 btnTwo.addEventListener('click', () => {
     displayValue.push('2');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
 
 btnThree.addEventListener('click', () => {
     displayValue.push('3');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
 
 btnFour.addEventListener('click', () => {
     displayValue.push('4');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
 
 btnFive.addEventListener('click', () => {
     displayValue.push('5');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
 
 btnSix.addEventListener('click', () => {
     displayValue.push('6');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
 
 btnSeven.addEventListener('click', () => {
     displayValue.push('7');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
 
 btnEight.addEventListener('click', () => {
     displayValue.push('8');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
 
 btnNine.addEventListener('click', () => {
     displayValue.push('9');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
 
 btnZero.addEventListener('click', () => {
     displayValue.push('0');
-    text = displayValue.join('');
+    text =`${result} ${displayValue.join('')}`;
     displayBox.textContent = text;
     console.log(text);
 })
@@ -139,7 +137,6 @@ btnClear.addEventListener('click', () => {
     num2 = 0;
     operator = 0;
     displayBox.textContent = ""
-    displayLeft.textContent = "";
 })
 
 btnPlus.addEventListener('click', () => {
@@ -156,8 +153,8 @@ btnPlus.addEventListener('click', () => {
                 operation.splice(0, 2);
                 operation.push(operate(num, operator, num2))
                 console.log(`operation = ${operation}`);
-                displayBox.textContent = operate(num, operator, num2);
-                displayLeft.textContent = operate(num, operator, num2);
+                result = operation;
+                displayBox.textContent = `${result}`;
                 num = operate(num, operator, num2);
                 console.log(`num = ${num}`);
                 console.log(text);
@@ -172,8 +169,8 @@ btnPlus.addEventListener('click', () => {
                     operation.splice(0, 2);
                     operation.unshift(operate(num, operator, num2))
                     console.log(`operation = ${operation}`);
-                    displayBox.textContent = operate(num, operator, num2);
-                    displayLeft.textContent = operate(num, operator, num2);
+                    result = operation;
+                    displayBox.textContent = `${result}`;
                     num = operate(num, operator, num2);
                     console.log(`num2 = ${num2}`);
                     displayValue.splice(0, displayValue.length);
@@ -183,7 +180,7 @@ btnPlus.addEventListener('click', () => {
     displayValue.push('+');
     operator = '+'
     console.log(operator);
-    displayBox.textContent = displayValue.join('');
+    displayBox.textContent = `${result} ${displayValue.join('')}`;
 
 })
 
@@ -200,8 +197,8 @@ btnSubstract.addEventListener('click', () => {
             operation.splice(0, 2);
             operation.push(operate(num, operator, num2))
             console.log(`operation = ${operation}`);
-            displayBox.textContent = operate(num, operator, num2);
-            displayLeft.textContent = operate(num, operator, num2);
+            result = operation;
+            displayBox.textContent = `${result}`;
             num = operate(num, operator, num2);
             console.log(`num = ${num}`);
             console.log(text);
@@ -216,8 +213,8 @@ btnSubstract.addEventListener('click', () => {
                 operation.splice(0, 2);
                 operation.unshift(operate(num, operator, num2))
                 console.log(`operation = ${operation}`);
-                displayBox.textContent = operate(num, operator, num2);
-                displayLeft.textContent = operate(num, operator, num2);
+                result = operation;
+                displayBox.textContent = `${result}`;
                 num = operate(num, operator, num2);
                 console.log(`num2 = ${num2}`);
                 displayValue.splice(0, displayValue.length);
@@ -226,7 +223,7 @@ btnSubstract.addEventListener('click', () => {
     displayValue.push('-');
     operator = '-'
     console.log(operator);
-    displayBox.textContent = displayValue.join('');
+    displayBox.textContent = `${result} ${displayValue.join('')}`;
 })
 
 btnMultiply.addEventListener('click', () => {
@@ -242,8 +239,8 @@ btnMultiply.addEventListener('click', () => {
             operation.splice(0, 2);
             operation.push(operate(num, operator, num2))
             console.log(`operation = ${operation}`);
-            displayBox.textContent = operate(num, operator, num2);
-            displayLeft.textContent = operate(num, operator, num2);
+            result = operation;
+            displayBox.textContent = `${result}`;
             num = operate(num, operator, num2);
             console.log(`num = ${num}`);
             console.log(text);
@@ -258,8 +255,8 @@ btnMultiply.addEventListener('click', () => {
                 operation.splice(0, 2);
                 operation.unshift(operate(num, operator, num2))
                 console.log(`operation = ${operation}`);
-                displayBox.textContent = operate(num, operator, num2);
-                displayLeft.textContent = operate(num, operator, num2);
+                result = operation;
+                displayBox.textContent = `${result}`;
                 num = operate(num, operator, num2);
                 console.log(`num2 = ${num2}`);
                 displayValue.splice(0, displayValue.length);
@@ -268,7 +265,7 @@ btnMultiply.addEventListener('click', () => {
     displayValue.push('*');
     operator = '*'
     console.log(operator);
-    displayBox.textContent = displayValue.join('');
+    displayBox.textContent = `${result} ${displayValue.join('')}`;
 })
 
 btnDivide.addEventListener('click', () => {
@@ -284,8 +281,8 @@ btnDivide.addEventListener('click', () => {
             operation.splice(0, 2);
             operation.push(operate(num, operator, num2))
             console.log(`operation = ${operation}`);
-            displayBox.textContent = operate(num, operator, num2);
-            displayLeft.textContent = operate(num, operator, num2);
+            result = operation;
+            displayBox.textContent = `${result}`;
             num = operate(num, operator, num2);
             console.log(`num = ${num}`);
             console.log(text);
@@ -300,8 +297,8 @@ btnDivide.addEventListener('click', () => {
                 operation.splice(0, 2);
                 operation.unshift(operate(num, operator, num2))
                 console.log(`operation = ${operation}`);
-                displayBox.textContent = operate(num, operator, num2);
-                displayLeft.textContent = operate(num, operator, num2);
+                result = operation;
+                displayBox.textContent = `${result}`;
                 num = operate(num, operator, num2);
                 console.log(`num2 = ${num2}`);
                 displayValue.splice(0, displayValue.length);
@@ -310,7 +307,7 @@ btnDivide.addEventListener('click', () => {
     displayValue.push('/');
     operator = '/'
     console.log(operator);
-    displayBox.textContent = displayValue.join('');
+    displayBox.textContent = `${result} ${displayValue.join('')}`;
 })
 
 btnEquals.addEventListener('click', () => {
@@ -325,8 +322,8 @@ btnEquals.addEventListener('click', () => {
     operation.splice(0, 2);
     operation.push(operate(num, operator, num2))
     console.log(`operation = ${operation}`);
-    displayBox.textContent = ""
-    displayLeft.textContent = operate(num, operator, num2);
+    result = operation;
+    displayBox.textContent = `${result}`;
     num = operate(num, operator, num2);
     console.log(`num = ${num}`);
     console.log(text);
@@ -341,9 +338,8 @@ btnEquals.addEventListener('click', () => {
         operation.splice(0, 2);
         operation.unshift(operate(num, operator, num2))
         console.log(`operation = ${operation}`);
-        displayBox.textContent = "";
-        displayLeft.textContent = operate(num, operator, num2);
-        num = operate(num, operator, num2);
+        result = operation;
+        displayBox.textContent = `${result}`;
         console.log(`num2 = ${num2}`);
         displayValue.splice(0, displayValue.length);
     }
@@ -352,7 +348,7 @@ btnEquals.addEventListener('click', () => {
 const numberWrapper = document.getElementById('numberWrapper');
 numberWrapper.addEventListener('click', () => {
     for(let i = 0; i <= displayValue.length; i++){
-        if (displayValue.length > 2){
+        if (displayValue.length > 2 && operator){
             btnEquals.disabled = false;
         }
     }
@@ -365,7 +361,7 @@ numberWrapper.addEventListener('click', () => {
 const operationsWrapper = document.getElementById('operationsWrapper');
 operationsWrapper.addEventListener('click', () => {
     for(let i = 0; i <= displayValue.length; i++){
-        if (displayValue.length > 2){
+        if (displayValue.length >= 2 && operator){
             btnEquals.disabled = false;
         }
     }
