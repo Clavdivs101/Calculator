@@ -137,6 +137,7 @@ btnClear.addEventListener('click', () => {
     operation.splice(0, operation.length);
     num = 0;
     num2 = 0;
+    operator = 0;
     displayBox.textContent = ""
     displayLeft.textContent = "";
 })
