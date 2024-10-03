@@ -1,4 +1,10 @@
-
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgba(15, 15, 15, 0.863);
+    margin-top: 1.5rem;
+}
 
 .calculatorWrapper{
     display: flex;
